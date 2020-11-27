@@ -128,7 +128,7 @@ img{
   align-items: center;
   font-weight: var(--font-semi);
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){
   .nav__menu{
     position: fixed;
     top: var(--header-height);
@@ -427,13 +427,13 @@ img{
    
    
     display: flex;
-    padding-top: 1rem;
+    
   
   }
   .nav__item{
     
     margin-left: var(--mb-4);
-    padding: 1rem;
+    padding: 100px;
     margin-bottom: 0.5rem;
   }
   .nav__toggle{
