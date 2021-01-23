@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,140 +10,192 @@
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <title>Portfolio Website</title>
 </head>
+
 <body>
-   <header class="l-header">
-       <nav class="nav bd-grid">
-           <div>
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
                 <a href="#" class="nav__logo">Shrey Srivastava</a>
-           </div>
+            </div>
 
-           <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                   <li class="nav_item">
-                       <a href="#home" class="nav__link">Home</a>
-                   </li>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav_item">
+                        <a href="#home" class="nav__link active">Home</a>
+                    </li>
 
-                   <!-- <li class="nav_item">
-                       <a href="#about" class="nav__link">About</a>
-                   </li> -->
+                    <li class="nav_item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
 
-                   <li class="nav_item">
-                       <a href="#skills" class="nav__link">Skills</a>
-                   </li>
+                    <li class="nav_item">
+                        <a href="#skills" class="nav__link">Skills</a>
+                    </li>
 
-                   <li class="nav_item">
-                       <a href="#work" class="nav__link">Projects</a>
-                   </li>
+                    <li class="nav_item">
+                        <a href="#work" class="nav__link">Projects</a>
+                    </li>
 
-                   <!-- <li class="nav_item">
+                    <!-- <li class="nav_item">
                        <a href="#contact" class="nav__link">Contact</a>
                    </li> -->
 
-               </ul>
-           </div>
+                </ul>
+            </div>
 
-           <div class="nav__toggle" id="nav-toggle">
+            <!-- <div class="nav__toggle" id="nav-toggle">
                     <i class='bx bx-menu'></i>
-           </div>
-       </nav>
-   </header>
-
-   <main class="1-main">
-       <section class="home bd-grid" id="home">
-             <div class="home__data">
-                 <h1 class="home__title"><span class="home__title-color">Shrey Srivastava</span><br> </h1>
-                 <h1 class="home__text">Web Developer</h1>
-                 <a href="https://drive.google.com/file/d/1qnr0d4aoc0Jj2qOl-oLpuPV9aFyz3wTU/view?usp=sharing" target="_blank" download="Shrey_Resume" class="button">Download Resume</a>
-             </div>
-
-             <div class="home__social">
-                 <a href="https://www.linkedin.com/in/shrey-s-b22762116/" target="_blank" class="home__social-icon"><i class='bx bxl-linkedin' ></i></a>
-                 <a href="https://github.com/shrey2506?tab=repositories" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-             </div>
-       </section>
-
-       
+           </div> -->
+        </nav>
+    </header>
 
 
-       <section class="skills section" id="skills">
-           <h2 class="section-title">Skills</h2>
 
-        
 
-           <div class="skills__container ">
-               <div>
-                   <div class="skills__data">
-                       <div class="skills__names">
-                        <i class='bx bxl-html5' ></i>
-                           <span class="skills__name">HTML5</span>
-                       </div>
-                       <div class="skills__bar skills__html"></div>
-                   </div>
+    <!-- HOME -->
 
-                   <div class="skills__data">
+    <main class="1-main">
+        <section class="home bd-grid" id="home">
+            <div class="center">
+                <div class="home__data">
+                    <h1 class="home__title"><span class="home__title-color">Shrey Srivastava</span><br> Web Developer
+                    </h1>
+
+                    <a href="https://drive.google.com/file/d/1qnr0d4aoc0Jj2qOl-oLpuPV9aFyz3wTU/view?usp=sharing"
+                        target="_blank" download="Shrey_Resume" class="button">Download Resume</a>
+                </div>
+
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/shrey-s-b22762116/" target="_blank"
+                        class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/shrey2506?tab=repositories" target="_blank" class="home__social-icon"><i
+                            class='bx bxl-github'></i></a>
+                </div>
+
+                <div class="home__img">
+                    <img src="assets/img/web_developer_svg.svg" alt="svg icon">
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section class="about section" id="about">
+            <h2 class="section-title">About</h2>
+
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="assets/img/about_me.svg" alt="">
+                </div>
+
+                <div>
+                    <h2 class="about__subtitle">I'am Shrey</h2>
+                    <p class="about__text">I'm a full stack developer, passionate about creating and developing scalable
+                        web interfaces.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skills__container bd-grid">
+
+
+                <div class="skills__img">
+                    <img src="assets/img/skills.svg" alt="svg icon">
+                </div>
+
+                <div>
+
+                    <div class="skills__data">
                         <div class="skills__names">
-                            <i class='bx bxl-css3' ></i>
+                            <i class='bx bxl-html5'></i>
+                            <span class="skills__name">HTML5</span>
+                        </div>
+                        <div class="skills__bar skills__html"></div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-css3'></i>
                             <span class="skills__name">CSS3</span>
                         </div>
                         <div class="skills__bar skills__html"></div>
-                   </div>
+                    </div>
 
 
-                   <div class="skills__data">
+                    <div class="skills__data">
                         <div class="skills__names">
-                            <i class='bx bxl-react' ></i>
+                            <i class='bx bxl-react'></i>
                             <span class="skills__name">React.js</span>
                         </div>
                         <div class="skills__bar skills__html"></div>
                     </div>
 
 
-                   <div class="skills__data">
+                    <div class="skills__data">
                         <div class="skills__names">
-                            <i class='bx bxl-nodejs' ></i>
+                            <i class='bx bxl-nodejs'></i>
                             <span class="skills__name">Node.js</span>
                         </div>
                         <div class="skills__bar skills__html"></div>
-                   </div>
+                    </div>
 
-                   <div class="skills__data">
+                    <div class="skills__data">
                         <div class="skills__names">
-                            <i class='bx bxs-data' ></i>
+                            <i class='bx bxs-data'></i>
                             <span class="skills__name">MongoDB</span>
                         </div>
                         <div class="skills__bar skills__html"></div>
                     </div>
-               </div>
-           </div>
-       </section>
+                </div>
 
-       <section class="work section" id="work">
-           <h2 class="section-title">Projects</h2>
+            </div>
 
-           <div class="work__container bd-grid">
+            </div>
+
+
+
+        </section>
+
+        <section class="work section" id="work">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="work__container bd-grid">
                 <div class="work__img">
                     <img src="assets/img/blogs.jpg" alt="Multiuser Blogging Platform">
 
                     <div class="work__data">
                         <div>
-                            <a href="https://github.com/shrey2506/Blog-Website-frontend-" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                            <a href="http://67.205.141.168/" target="_blank" class="work__link"><i class='bx bx-link' ></i></a>
+                            <a href="https://github.com/shrey2506/Blog-Website-frontend-" target="_blank"
+                                class="home__social-icon"><i class='bx bxl-github'></i></a>
+                            <a href="http://67.205.141.168/" target="_blank" class="work__link"><i
+                                    class='bx bx-link'></i></a>
                         </div>
-                       
+
                         <span class="work__title">Multiuser Blogging Platform</span>
                     </div>
                 </div>
 
-               
+
                 <div class="work__img">
                     <img src="assets/img/netflix_clone.jpg" alt="Netflix Clone">
 
                     <div class="work__data">
                         <div class="row">
-                            <a href="https://github.com/shrey2506/Netflix-Clone-with-React-Frontend-" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                            <a href=" https://netflix-clone-f276c.web.app/" target="_blank" class="work__link"><i class='bx bx-link' ></i></a>
+                            <a href="https://github.com/shrey2506/Netflix-Clone-with-React-Frontend-" target="_blank"
+                                class="home__social-icon"><i class='bx bxl-github'></i></a>
+                            <a href=" https://netflix-clone-f276c.web.app/" target="_blank" class="work__link"><i
+                                    class='bx bx-link'></i></a>
                         </div>
-                        
+
                         <span class="work__title">Netflix Clone</span>
                     </div>
                 </div>
@@ -152,14 +205,16 @@
 
                     <div class="work__data">
                         <div class="row">
-                            <a href="https://github.com/shrey2506/React-Homepage-UI" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                            <a href="https://nanorocks-react-app.web.app/" target="_blank" class="work__link"><i class='bx bx-link' ></i></a>
+                            <a href="https://github.com/shrey2506/React-Homepage-UI" target="_blank"
+                                class="home__social-icon"><i class='bx bxl-github'></i></a>
+                            <a href="https://nanorocks-react-app.web.app/" target="_blank" class="work__link"><i
+                                    class='bx bx-link'></i></a>
                         </div>
-                       
+
                         <span class="work__title">React Homepage UI</span>
                     </div>
 
-                   
+
                 </div>
 
                 <div class="work__img">
@@ -167,20 +222,22 @@
 
                     <div class="work__data">
                         <div class="row">
-                            <a href="https://github.com/shrey2506/YourPlaces" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                            <a href=" https://raect-app-1405.web.app" target="_blank" class="work__link"><i class='bx bx-link' ></i></a>
+                            <a href="https://github.com/shrey2506/YourPlaces" target="_blank"
+                                class="home__social-icon"><i class='bx bxl-github'></i></a>
+                            <a href=" https://raect-app-1405.web.app" target="_blank" class="work__link"><i
+                                    class='bx bx-link'></i></a>
                         </div>
-                        
+
                         <span class="work__title">Your Places</span>
                     </div>
                 </div>
 
-                
-           </div>
 
-       </section>
+            </div>
 
-       <!-- <section class="contact section" id="contact">
+        </section>
+
+        <!-- <section class="contact section" id="contact">
              <h2 class="section-title">Contact</h2>
 
              <div class="contact__container bd-grid">
@@ -194,21 +251,26 @@
              </div>
 
        </section> -->
-   </main>
+    </main>
 
-   <footer class="footer">
-       <p class="footer__title">Shrey Srivastava(c)</p>
+    <footer class="footer">
+        <p class="footer__title">Shrey Srivastava</p>
 
-       <div class="footer__social">
-           <a href="https://www.linkedin.com/in/shrey-s-b22762116/" target="_blank" class="footer__icon"><i class='bx bxl-linkedin' ></i></a>
-           <a href="https://github.com/shrey2506?tab=repositories" target="_blank" class="footer__icon"><i class='bx bxl-github' ></i></a>
-       </div>
-   </footer>
+        <div class="footer__social">
+            <a href="https://www.linkedin.com/in/shrey-s-b22762116/" target="_blank" class="footer__icon"><i
+                    class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/shrey2506?tab=repositories" target="_blank" class="footer__icon"><i
+                    class='bx bxl-github'></i></a>
+        </div>
 
-   <!-- scroll-reveal -->
-   <script src="https://unpkg.com/scrollreveal"></script></body>
+        <p class="footer__title">(c) 2021, All Rights Reserved</p>
+    </footer>
 
-    <script src="assets/js/main.js"></script>
-    
-   
+    <!-- scroll-reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+</body>
+
+<script src="assets/js/main.js"></script>
+
+
 </html>
