@@ -252,15 +252,25 @@ p { margin: 0; }
 .back ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; color: var(--ink); font-size: 14.5px; }
 .back ul li::marker { color: var(--accent); }
 
-.code { font: 400 13px/1.7 var(--f-mono); color: var(--muted); overflow-x: auto; white-space: pre; }
-.code .k { color: var(--c-front); }
-.code .s { color: var(--accent); }
-.code .f { color: var(--c-back); }
-.code .c { font-style: italic; opacity: 0.8; }
-.jl { margin: 14px 0 0; padding-top: 12px; border-top: 1px dashed var(--line); display: grid; gap: 6px; font-size: 13px; }
-.jl div { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 10px; align-items: baseline; }
-.jl dt { font: 500 12px/1.4 var(--f-mono); color: var(--c-front); }
-.jl dd { margin: 0; color: var(--muted); }
+.speed { gap: 14px; }
+.speed-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.speed-head b { font-family: var(--f-display); font-weight: 700; font-size: 2.8rem; line-height: 1; letter-spacing: -0.03em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.speed-head span { color: var(--muted); font-size: 14px; max-width: 18ch; line-height: 1.35; }
+.speed-bars { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px 12px; align-items: center; font-size: 12.5px; color: var(--muted); }
+.sbar { position: relative; height: 24px; perspective: 400px; }
+.sbar i {
+  position: absolute; inset: 0 auto 0 0; border-radius: 5px; background: var(--bar);
+  box-shadow: inset 0 6px 0 rgba(255, 255, 255, 0.18), 0 6px 0 -1px color-mix(in srgb, var(--bar) 60%, var(--ink));
+  transform: rotateX(18deg); transform-origin: bottom;
+}
+.sbar i.hot { background: var(--accent); box-shadow: inset 0 6px 0 rgba(255, 255, 255, 0.22), 0 6px 0 -1px color-mix(in srgb, var(--accent) 60%, var(--ink)); }
+.sbar em { position: absolute; top: 50%; transform: translateY(-50%); right: 8px; font: 500 12px/1 var(--f-mono); font-style: normal; color: var(--ink); }
+.sbar i.hot + em { right: auto; left: calc(50% + 8px); color: var(--ink); }
+.speed-note { font: 400 11.5px/1.4 var(--f-mono); color: var(--muted); }
+.feats { display: grid; gap: 8px; }
+.feats ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.feats li { font-size: 13.5px; line-height: 1.4; padding: 10px 12px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); }
+@media (max-width: 480px) { .feats ul { grid-template-columns: minmax(0, 1fr); } }
 .big { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 .big b { font-family: var(--f-display); font-weight: 700; font-size: 2.6rem; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
 .big span { color: var(--muted); font-size: 14px; }
@@ -454,28 +464,24 @@ p { margin: 0; }
             <div class="face front">
               <div class="face-top"><span class="eyebrow">Power BI custom visual · Datellers</span><a class="ext" href="https://greenstep.com/bibook/" target="_blank" rel="noopener">BI Book ↗</a></div>
               <h3>BI Book Planning performance overhaul</h3>
-              <div class="visual">
-<pre class="code"><span class="c">// Only rows inside the scroll window exist in the DOM</span>
-tbody.selectAll(<span class="s">'tr.row'</span>)
-  .data(rows.slice(first, last), <span class="f">d =&gt; d.uid</span>)
-  .join(
-    <span class="k">enter</span>  =&gt; enter.append(<span class="s">'tr'</span>).attr(<span class="s">'class'</span>, <span class="s">'row'</span>),
-    <span class="k">update</span> =&gt; update,
-    <span class="k">exit</span>   =&gt; exit.remove()
-  )
-  .order();
-
-<span class="c">// Cells are keyed too, so unchanged ones are reused</span>
-tr.selectAll(<span class="s">'th,td'</span>)
-  .data(cells, <span class="f">d =&gt; d.key</span>)
-  .join(buildCell, patchIfChanged);</pre>
-                <dl class="jl">
-                  <div><dt>enter</dt><dd>Rows scrolling into view are built.</dd></div>
-                  <div><dt>update</dt><dd>Rows already on screen are kept as they are.</dd></div>
-                  <div><dt>exit</dt><dd>Rows scrolling out are removed.</dd></div>
-                </dl>
+              <div class="visual speed" role="img" aria-label="About 50% faster grid rendering: render time went from 100% on the baseline to 50% after the rewrite">
+                <div class="speed-head"><b>50%</b><span>faster grid rendering after the rewrite</span></div>
+                <div class="speed-bars">
+                  <span>Before</span><div class="sbar"><i style="width:100%"></i><em>100%</em></div>
+                  <span>After</span><div class="sbar"><i class="hot" style="width:50%"></i><em>50%</em></div>
+                </div>
+                <div class="speed-note">Relative render time · measured with Power BI Performance Analyzer</div>
               </div>
-              <p>The grid used to rebuild every row and cell on each refresh. Now rows are virtualized and keyed by ID, and cells are keyed so unchanged ones are reused instead of recreated. I benchmarked it against the old branch with Power BI Performance Analyzer and the Chrome profiler.</p>
+              <p>BI Book Planning is Greenstep's budgeting and forecasting tool inside Power BI. I rewrote how its planning grid renders, so a refresh only touches the rows and cells that changed.</p>
+              <div class="feats">
+                <div class="eyebrow">What the product does</div>
+                <ul>
+                  <li>Budgets, rolling forecasts and scenarios in one place</li>
+                  <li>Figures stay current through 100+ system integrations</li>
+                  <li>Edit rights per section, one shared version for everyone</li>
+                  <li>Drill from a department P&amp;L down to transactions</li>
+                </ul>
+              </div>
               <div class="face-foot">
                 <div class="chips"><span class="chip">D3.js</span><span class="chip">TypeScript</span><span class="chip">pbiviz</span></div>
                 <button type="button" class="flip-btn" aria-expanded="false">How it was built <span aria-hidden="true">↻</span></button>
